@@ -1,14 +1,17 @@
 package school;
 
+import java.util.ArrayList;
+import utils.Define;
+
 public class Subject {
-    private String subject;
-    private int subjectId;
-    private int gradeType;
+    private String subjectName; // 과목 이름
+    private int subjectId;  // 과목 고유 번호
+    private int gradeType;  // 학점 평가 정책
 
     private ArrayList<Student> studentList = new ArrayList<Student>();
 
-    public Subject(String subject, int subjectId) {
-        this.subject = subject;
+    public Subject(String subjectName, int subjectId) {
+        this.subjectName = subjectName;
         this.subjectId = subjectId;
         this.gradeType = Define.AB_TYPE;
     }
@@ -25,7 +28,11 @@ public class Subject {
         return subjectId;
     }
 
-    public ArrayList<student> getSTudentList() {
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public ArrayList<Student> getStudentList() {
         return studentList;
     }
 
@@ -35,6 +42,10 @@ public class Subject {
 
     public int getGradeType() {
         return gradeType;
+    }
+
+    public void setGradeType(int gradeType) {
+        this.gradeType = gradeType;
     }
 
     public void register(Student student) {
